@@ -26,7 +26,7 @@ public class RequestParameter {
     /**
      * jsonp请求
      */
-    private String callbackName;
+    private String callback;
     /**
      * 查询分页起始页
      */

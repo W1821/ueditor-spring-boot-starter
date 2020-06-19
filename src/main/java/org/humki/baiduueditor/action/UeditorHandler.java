@@ -22,7 +22,7 @@ public class UeditorHandler {
         setHeader(response);
 
         // 校验参数
-        String callbackName = parameter.getCallbackName();
+        String callbackName = parameter.getCallback();
         if (!validCallbackName(callbackName)) {
             return ResponseUtil.error(UeditorConstant.ILLEGAL_CALLBACK);
         }
