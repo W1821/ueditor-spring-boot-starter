@@ -22,16 +22,16 @@ public class UeditorHandler {
         setHeader(response);
 
         // 校验参数
-        String callbackName = parameter.getCallback();
-        if (!validCallbackName(callbackName)) {
+        String callback = parameter.getCallback();
+        if (!validCallbackName(callback)) {
             return ResponseUtil.error(UeditorConstant.ILLEGAL_CALLBACK);
         }
 
         // 统一请求处理
         String jsonData = doAction(parameter, action, request, response);
         // 支持jsonp格式
-        if (callbackName != null) {
-            return supportJsonp(callbackName, jsonData);
+        if (callback != null) {
+            return supportJsonp(callback, jsonData);
         } else {
             return jsonData;
         }
